@@ -1,7 +1,7 @@
 # Estudio de Ataques al Corazon
 ## Aplicando algun algoritmo de Machine Learning para intentar predecir resultados
 
-Utilizando un dataset sobre informes de ataque al corazon, con resultados y caracteristicas de diversos pacientes, se le aplica tecnicas de manipulación de datos y luego se desarrolla un algoritmo de Machine Learning para tratar de predecir resultados. A continuación a modo de resumen se puede ver algunos resultados obtenidos.
+Utilizando un dataset con informes sobre ataques al corazon, con resultados y caracteristicas clinicas de diversos pacientes, se le aplica tecnicas de manipulación de datos y luego se desarrolla un algoritmo de Machine Learning para tratar de predecir resultados. A continuación a modo de resumen se puede ver algunos resultados obtenidos.
 
 Mapa de calor con las correlaciones entre los valores del dataset.
 
