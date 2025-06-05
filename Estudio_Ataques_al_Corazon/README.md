@@ -17,6 +17,11 @@ Matriz de confusion que se obtiene luego de entrenar un modelo de bosques aleato
 
 ![image](https://github.com/user-attachments/assets/2367f7e8-0790-4cef-b707-f0e9c5123392)
 
+Matriz de confusión que se obtiene con un modelo KNN
+
+![image](https://github.com/user-attachments/assets/ab7ac7e9-8e35-4386-9214-b65c165ca141)
+
+
 
 
 ## Créditos y autor
