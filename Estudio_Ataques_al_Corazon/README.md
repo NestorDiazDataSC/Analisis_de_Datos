@@ -5,15 +5,18 @@ Utilizando un dataset con informes sobre ataques al corazon, con resultados y ca
 
 Mapa de calor con las correlaciones entre los valores del dataset.
 
-![01](https://github.com/NestorDiazDataSC/Informe-Estudio-de-Ataques-al-Corazon/assets/94582879/06b9d4db-6b34-4e21-bf28-c5a54e99a90e)
+![image](https://github.com/user-attachments/assets/c3cb2000-587c-4f41-a253-4634d6206087)
 
-Ejemplo de arbol de decisión obtenido
 
-![02](https://github.com/NestorDiazDataSC/Informe-Estudio-de-Ataques-al-Corazon/assets/94582879/25e7a78f-94b4-4adc-a8d7-f82b9c40cd8a)
+Ejemplo de arbol de decisión obtenido...
+
+![image](https://github.com/user-attachments/assets/a6016838-6e3f-4900-86bc-5a9dcfcdf1c1)
+
 
 Matriz de confusion que se obtiene luego de entrenar un modelo de bosques aleatorios
 
-![03](https://github.com/NestorDiazDataSC/Informe-Estudio-de-Ataques-al-Corazon/assets/94582879/49e2efca-fb28-403d-88fe-2e6a3f645cca)
+![image](https://github.com/user-attachments/assets/2367f7e8-0790-4cef-b707-f0e9c5123392)
+
 
 
 ## Créditos y autor
