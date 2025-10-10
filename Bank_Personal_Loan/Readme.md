@@ -8,4 +8,7 @@ Resumen del analisis exploratorio de los datos:
 
 <img width="631" height="342" alt="image" src="https://github.com/user-attachments/assets/e8d83016-109c-4dc8-920c-57e27a0e12f6" />
 
+Luego del analisis exploratorio se le aplico a los datos diversos algoritmos de clasificación para ver cual se adaptaba mejor y con cual conseguir mejores resultados, en definitiva se optaria por aplicar Random Forest
+puesto que se obtienen mejores resultados que los demas algoritmos como se puede ver en el gráfico.
 
+<img width="970" height="431" alt="image" src="https://github.com/user-attachments/assets/ce21669d-b946-439c-8756-e34ea2539650" />
