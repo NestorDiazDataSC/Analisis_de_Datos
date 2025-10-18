@@ -31,3 +31,9 @@ Gradient Boosting
 XGBoost
 
 <img width="997" height="473" alt="image" src="https://github.com/user-attachments/assets/30f59cff-8d03-4562-8eda-7537a3c71d3c" />
+
+
+Finalmente, se realiza un análisis comparativo de los diferentes modelos de regresión empleados, evaluando su desempeño en función del Error Cuadrático Medio (MSE). Este enfoque permite determinar cuál de los modelos logra predecir los precios de los automóviles con mayor precisión, ya que a medida que el valor del MSE disminuye, el modelo se aproxima de manera más exacta a los valores reales, reflejando un mejor ajuste y capacidad predictiva
+
+
+<img width="766" height="440" alt="image" src="https://github.com/user-attachments/assets/11614f2c-de52-4e47-8e79-ca2d4fc3a04b" />
