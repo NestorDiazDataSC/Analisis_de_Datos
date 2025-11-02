@@ -12,7 +12,3 @@ Estos datos contienen información sobre solicitudes de clientes, incluye sus at
 * REGRESION LOGISTICA
   
 ![image](https://github.com/user-attachments/assets/73d3c383-4a1a-41cb-8bef-8516bb0fad01)
-
-* RANDOM FOREST
-
-![image](https://github.com/user-attachments/assets/3a9a143c-6cfe-4312-a6ee-3a63ab995ab9)
