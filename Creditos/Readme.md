@@ -1,6 +1,6 @@
 ---
 
-# `ANALISIS DE DATOS BANCARIOS PARA LA APROBACION O RECHAZO DE CREDITOS`
+# `Predicción de riesgo crediticio mediante regresión logística`
 
 ---
 Estos datos contienen información sobre solicitudes de clientes, incluye sus atributos y que estatus lograron con su solicitud de credito. A continuación un resumen del analisis exploratorio de los datos y los algoritmos utilizados
