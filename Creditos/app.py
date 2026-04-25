@@ -15,7 +15,17 @@ st.write("Existe modelo:", os.path.exists(modelo_path))
 st.write("Ruta scaler:", scaler_path)
 st.write("Existe scaler:", os.path.exists(scaler_path))
 
+st.write("Modelo path:", modelo_path)
+st.write("Existe modelo:", os.path.exists(modelo_path))
 
+import joblib
+
+try:
+    modelo = joblib.load(modelo_path)
+    st.success("Modelo cargado correctamente")
+except Exception as e:
+    st.error(f"Error al cargar modelo: {e}")
+    
 import streamlit as st
 import pandas as pd
 import numpy as np
