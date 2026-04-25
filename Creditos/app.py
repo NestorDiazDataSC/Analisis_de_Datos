@@ -1,3 +1,21 @@
+import os
+import streamlit as st
+
+st.write("Directorio actual:", os.getcwd())
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+st.write("BASE_DIR:", BASE_DIR)
+
+modelo_path = os.path.join(BASE_DIR, "modelo_credito.pkl")
+scaler_path = os.path.join(BASE_DIR, "scaler.pkl")
+
+st.write("Ruta modelo:", modelo_path)
+st.write("Existe modelo:", os.path.exists(modelo_path))
+
+st.write("Ruta scaler:", scaler_path)
+st.write("Existe scaler:", os.path.exists(scaler_path))
+
+
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -196,7 +214,7 @@ except Exception:
     st.markdown("""
     <div style='background:#161b22; border:1px solid #f0883e; border-radius:8px; padding:16px 20px; margin-bottom:24px;'>
       <span style='font-family:"IBM Plex Mono",monospace; font-size:12px; color:#f0883e;'>
-        ⚠ MODO DEMO — modelo_credito.pkl / scaler.pkl no encontrados. Usando simulación.
+        ⚠ MODO DEMO — Usando simulación.
       </span>
     </div>
     """, unsafe_allow_html=True)
