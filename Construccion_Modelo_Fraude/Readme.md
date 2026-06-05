@@ -1,1 +1,7 @@
+## CONSTRUCCION DE UN MODELO DE FRAUDE
 
+<img width="1304" height="547" alt="image" src="https://github.com/user-attachments/assets/2e442649-1ed4-4a7c-bcfd-f77961c4b3dc" />
+
+<img width="1307" height="285" alt="image" src="https://github.com/user-attachments/assets/d9ac8ad2-e3e2-4c2a-8db0-7a13195ea80a" />
+
+<img width="1302" height="289" alt="image" src="https://github.com/user-attachments/assets/3670c15b-1aac-465b-a981-545718711878" />
