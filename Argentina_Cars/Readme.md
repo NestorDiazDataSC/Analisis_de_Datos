@@ -37,3 +37,6 @@ Finalmente, se realiza un análisis comparativo de los diferentes modelos de reg
 
 
 <img width="766" height="440" alt="image" src="https://github.com/user-attachments/assets/11614f2c-de52-4e47-8e79-ca2d4fc3a04b" />
+
+## Créditos y autor
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Nestor_Diaz-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=101010)](https://www.linkedin.com/in/contadornestordiaz/)
