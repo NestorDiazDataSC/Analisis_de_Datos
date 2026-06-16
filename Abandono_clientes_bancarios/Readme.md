@@ -7,3 +7,6 @@ Analisis exploratorio de los datos:
 <img width="1081" height="326" alt="image" src="https://github.com/user-attachments/assets/4b5027b3-bb1e-458a-8e14-4ea185df9834" />
 
 <img width="1050" height="324" alt="image" src="https://github.com/user-attachments/assets/84ff433c-9350-443a-9ed5-1fea704a72d5" />
+
+## Créditos y autor
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Nestor_Diaz-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=101010)](https://www.linkedin.com/in/contadornestordiaz/)
