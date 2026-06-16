@@ -12,3 +12,6 @@ Estos datos contienen información sobre solicitudes de clientes, incluye sus at
 * REGRESION LOGISTICA
   
 ![image](https://github.com/user-attachments/assets/73d3c383-4a1a-41cb-8bef-8516bb0fad01)
+
+## Créditos y autor
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Nestor_Diaz-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=101010)](https://www.linkedin.com/in/contadornestordiaz/)
