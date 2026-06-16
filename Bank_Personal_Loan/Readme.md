@@ -13,3 +13,5 @@ puesto que se obtienen mejores resultados que los demas algoritmos como se puede
 
 <img width="1339" height="638" alt="image" src="https://github.com/user-attachments/assets/1fbdf03e-2813-4df6-8c22-71cc709e426e" />
 
+## Créditos y autor
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Nestor_Diaz-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=101010)](https://www.linkedin.com/in/contadornestordiaz/)
