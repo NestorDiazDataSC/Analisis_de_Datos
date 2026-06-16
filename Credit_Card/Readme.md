@@ -26,3 +26,6 @@ Se evalúan utilizando métricas como:
 - Accuracy (% de predicciones correctas sobre el total de los casos)
 - Recall (Mide cuantos clientes que podrían ser aprobados fueron correctamente detectados).
 - Auc (Mide como el modelo es capas de diferenciar entre aprobados y no aprobados, que tan bien los ordena de un lado y del otro).
+
+## Créditos y autor
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Nestor_Diaz-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=101010)](https://www.linkedin.com/in/contadornestordiaz/)
