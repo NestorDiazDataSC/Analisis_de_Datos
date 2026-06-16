@@ -5,3 +5,6 @@
 <img width="1307" height="285" alt="image" src="https://github.com/user-attachments/assets/d9ac8ad2-e3e2-4c2a-8db0-7a13195ea80a" />
 
 <img width="1302" height="289" alt="image" src="https://github.com/user-attachments/assets/3670c15b-1aac-465b-a981-545718711878" />
+
+## Créditos y autor
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Nestor_Diaz-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=101010)](https://www.linkedin.com/in/contadornestordiaz/)
