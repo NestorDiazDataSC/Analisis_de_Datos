@@ -18,3 +18,6 @@ El dataset contiene registros de transacciones con variables como monto, saldo, 
 <img width="1306" height="409" alt="image" src="https://github.com/user-attachments/assets/6c191f4e-771d-4628-a31c-dd99eee7dbb2" />
 
 <img width="1309" height="503" alt="image" src="https://github.com/user-attachments/assets/c057ad64-36a0-43bb-aadf-3481289f4a44" />
+
+## Créditos y autor
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Nestor_Diaz-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=101010)](https://www.linkedin.com/in/contadornestordiaz/)
