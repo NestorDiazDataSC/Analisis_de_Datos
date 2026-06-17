@@ -5,3 +5,7 @@ EDA
 <img width="476" height="420" alt="image" src="https://github.com/user-attachments/assets/79b3c51b-e142-4e7e-8b09-55791e5743cd" />
 
 <img width="1264" height="536" alt="image" src="https://github.com/user-attachments/assets/984ae755-b898-424d-b2f3-9ca0f0afe189" />
+
+
+## Créditos y autor
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Nestor_Diaz-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=101010)](https://www.linkedin.com/in/contadornestordiaz/)
