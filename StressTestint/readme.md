@@ -12,4 +12,6 @@ Con estos componentes se calcula la Pérdida Esperada ($EL$):$$EL = PD \times LG
 
 <img width="1071" height="440" alt="image" src="https://github.com/user-attachments/assets/8c7e7f9a-e494-4294-87e1-abde4a6b5119" />
 
+## Créditos y autor
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Nestor_Diaz-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=101010)](https://www.linkedin.com/in/contadornestordiaz/)
 
