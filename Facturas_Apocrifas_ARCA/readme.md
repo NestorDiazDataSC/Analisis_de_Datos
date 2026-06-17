@@ -47,5 +47,7 @@ En el análisis se optó por enmascarar los números de CUIT y no publicar la ba
 
 <img width="1307" height="339" alt="image" src="https://github.com/user-attachments/assets/24f9e830-6c26-4ad9-aa92-a71657ba1073" />
 
+## Créditos y autor
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Nestor_Diaz-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=101010)](https://www.linkedin.com/in/contadornestordiaz/)
 
 
