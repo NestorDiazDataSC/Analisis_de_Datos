@@ -20,3 +20,11 @@ Campos de los datos:
 
 Analisis exploratorio de los datos:
 <img width="1083" height="432" alt="image" src="https://github.com/user-attachments/assets/bb67bd04-e8c4-45ca-ba58-a763e12124f7" />
+
+<img width="883" height="774" alt="image" src="https://github.com/user-attachments/assets/00a6c9ec-9cd7-41d0-851c-94c403733e83" />
+
+<img width="1305" height="495" alt="image" src="https://github.com/user-attachments/assets/3efa0de5-aaba-4c88-8423-fa035315444e" />
+
+
+## Créditos y autor
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Nestor_Diaz-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=101010)](https://www.linkedin.com/in/contadornestordiaz/)
