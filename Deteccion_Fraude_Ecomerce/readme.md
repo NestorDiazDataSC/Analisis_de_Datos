@@ -8,3 +8,5 @@ Importancia de las variables que se obtuvo luego del analisis:
 
 <img width="562" height="676" alt="image" src="https://github.com/user-attachments/assets/2b88d50f-c73a-4290-9232-c1401533f7af" />
 
+## Créditos y autor
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-Nestor_Diaz-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=101010)](https://www.linkedin.com/in/contadornestordiaz/)
