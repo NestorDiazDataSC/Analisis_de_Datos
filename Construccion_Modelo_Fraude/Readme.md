@@ -1,5 +1,8 @@
 ## CONSTRUCCION DE UN MODELO DE FRAUDE
 
+Construcción de un modelo predictivo para la detección de fraude a partir de un conjunto de datos de aproximadamente 250.000 registros. Se desarrollan etapas de ingeniería de características, reducción de dimensionalidad y entrenamiento de un modelo Random Forest
+
+EDA
 <img width="1304" height="547" alt="image" src="https://github.com/user-attachments/assets/2e442649-1ed4-4a7c-bcfd-f77961c4b3dc" />
 
 <img width="1307" height="285" alt="image" src="https://github.com/user-attachments/assets/d9ac8ad2-e3e2-4c2a-8db0-7a13195ea80a" />
