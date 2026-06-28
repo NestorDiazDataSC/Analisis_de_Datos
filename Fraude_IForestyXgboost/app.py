@@ -254,10 +254,9 @@ if "resultados" not in st.session_state:
     col_btn = st.columns([1, 2, 1])[1]
     with col_btn:
         if st.button("⚡ Ejecutar Pipeline Completo"):
-            with st.spinner("Cargando datos · Entrenando modelos · Calculando SHAP..."):
-                df = generar_datos()
-                st.session_state["resultados"] = entrenar_modelos(df)
-    st.markdown(f"""
+    with st.spinner("Cargando datos · Entrenando modelos · Calculando SHAP..."):
+        st.session_state["resultados"] = entrenar_modelos(df)
+        st.markdown(f"""
     <div class="info-box" style="max-width:600px; margin: 0 auto;">
     <strong>Dataset real · Credit Card Fraud (Kaggle)</strong><br>
     20.492 transacciones · 492 fraudes (2,40%) · 30 features (V1–V28 + Time + Amount)<br><br>
