@@ -348,7 +348,7 @@ with tab1:
         (axes[1], r["y_test"],  r["y_pred_hyb"],  "XGBoost + IF Score")
     ]:
         cm = confusion_matrix(y_t, y_p)
-        im = ax.imshow(cm, cmap="Oranges", aspect="auto")
+        im = ax.imshow(cm, cmap="Greys", aspect="auto")
         ax.set_facecolor("#161B22")
         for i in range(2):
             for j in range(2):
