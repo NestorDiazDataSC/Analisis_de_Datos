@@ -148,26 +148,17 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 
-from pathlib import Path
-import os
-import streamlit as st
-
-BASE_DIR = Path(__file__).resolve().parent
-
-st.write("BASE_DIR:", BASE_DIR)
-st.write("APP:", __file__)
-st.write("Archivos disponibles:", os.listdir(BASE_DIR))
-
-
-
-
 
 # ── Carga de datos ────────────────────────────────────────────────────────────
-@st.cache_data
-def generar_datos():
-    df = pd.read_csv("creditcard_small.csv")
-    return df
+from pathlib import Path
 
+BASE_DIR = Path(__file__).resolve().parent
+csv_path = BASE_DIR / "creditcard_small.csv"
+
+st.write(csv_path)
+st.write(csv_path.exists())
+
+df = pd.read_csv(csv_path)
 # ── Pipeline principal ────────────────────────────────────────────────────────
 @st.cache_resource
 def entrenar_modelos(df):
