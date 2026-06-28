@@ -497,51 +497,96 @@ with tab4:
     st.markdown('<div class="section-title">Transacciones clasificadas como fraude · ordenadas por probabilidad</div>', unsafe_allow_html=True)
 
     ranking = r["ranking"].copy()
-    n_alertas = len(ranking)
-    n_fraudes_reales = ranking["real"].sum()
-    precision_rank = n_fraudes_reales / n_alertas if n_alertas > 0 else 0
+    
+    # Mostrar métricas antes de filtrar
+    n_alertas_total = len(ranking)
+    n_fraudes_reales_total = ranking["real"].sum()
+    precision_rank_total = n_fraudes_reales_total / n_alertas_total if n_alertas_total > 0 else 0
 
     c1, c2, c3 = st.columns(3)
     c1.markdown(f"""<div class="metric-card"><div class="label">Total alertas</div>
-    <div class="value" style="font-size:1.5rem">{n_alertas:,}</div></div>""", unsafe_allow_html=True)
+    <div class="value" style="font-size:1.5rem">{n_alertas_total:,}</div></div>""", unsafe_allow_html=True)
     c2.markdown(f"""<div class="metric-card"><div class="label">Fraudes reales detectados</div>
-    <div class="value" style="font-size:1.5rem">{int(n_fraudes_reales):,}</div></div>""", unsafe_allow_html=True)
+    <div class="value" style="font-size:1.5rem">{int(n_fraudes_reales_total):,}</div></div>""", unsafe_allow_html=True)
     c3.markdown(f"""<div class="metric-card"><div class="label">Precisión en alertas</div>
-    <div class="value" style="font-size:1.5rem">{precision_rank:.1%}</div></div>""", unsafe_allow_html=True)
+    <div class="value" style="font-size:1.5rem">{precision_rank_total:.1%}</div></div>""", unsafe_allow_html=True)
 
     st.markdown("&nbsp;", unsafe_allow_html=True)
 
-    # 🔥 FILTROS - ahora funcionan correctamente
+    # 🔥 FILTROS - ahora con valores por defecto más razonables
     st.markdown("### 🔍 Filtros")
     col_filtro1, col_filtro2, col_filtro3 = st.columns(3)
     with col_filtro1:
-        min_prob = st.slider("Probabilidad mínima", 0.0, 1.0, 0.5, 0.01, key="min_prob_slider")
+        # Cambiar el rango para que sea más útil con tus datos
+        # Si tus probabilidades están entre 0.8 y 1.0, usar pasos más finos
+        min_prob = st.slider(
+            "Probabilidad mínima", 
+            0.0, 1.0, 
+            0.0,  # Valor por defecto: 0 (muestra todo)
+            0.01,
+            key="min_prob_slider",
+            help="Filtra transacciones con probabilidad >= al valor seleccionado"
+        )
     with col_filtro2:
-        max_monto = st.number_input("Monto máximo ($)", min_value=0, value=10000, step=100, key="max_monto_input")
+        max_monto = st.number_input(
+            "Monto máximo ($)", 
+            min_value=0, 
+            value=10000, 
+            step=100, 
+            key="max_monto_input"
+        )
     with col_filtro3:
-        solo_fraudes = st.checkbox("Mostrar solo fraudes reales", value=False, key="solo_fraudes_checkbox")
+        solo_fraudes = st.checkbox(
+            "Mostrar solo fraudes reales", 
+            value=False, 
+            key="solo_fraudes_checkbox"
+        )
     
-    # Aplicar filtros al ranking
+    # 🔥 APLICAR FILTROS - ahora correctamente
     ranking_filtrado = ranking.copy()
+    
+    # Filtro 1: Probabilidad mínima
     ranking_filtrado = ranking_filtrado[ranking_filtrado["prob_fraude"] >= min_prob]
+    
+    # Filtro 2: Monto máximo
     ranking_filtrado = ranking_filtrado[ranking_filtrado["Amount"] <= max_monto]
+    
+    # Filtro 3: Solo fraudes reales
     if solo_fraudes:
         ranking_filtrado = ranking_filtrado[ranking_filtrado["real"] == 1]
-
-    # Mostrar ranking filtrado
+    
+    # Mostrar cuántas filas quedaron después de filtrar
+    st.info(f"📊 Mostrando {len(ranking_filtrado)} de {len(ranking)} transacciones después de aplicar filtros")
+    
+    # 🔥 MOSTRAR DATOS FILTRADOS - usar ranking_filtrado, NO ranking
     cols_show = ["id_display", "prob_fraude", "score_if", "Amount", "real"]
     cols_show = [c for c in cols_show if c in ranking_filtrado.columns]
 
-    display = ranking_filtrado[cols_show].head(50).copy()
-    display["id_display"] = display["id_display"].astype(int)
-    display["prob_fraude"] = display["prob_fraude"].map("{:.1%}".format)
-    display["score_if"]    = display["score_if"].map("{:.4f}".format)
-    display["Amount"]      = display["Amount"].map("${:.2f}".format)
-    display["real"]        = display["real"].map({1: "✅ Fraude", 0: "❌ Falso positivo"})
-    display.columns        = ["ID", "Prob. Fraude", "Score IF", "Monto", "Etiqueta Real"]
-    display.index          = range(1, len(display) + 1)
+    if len(ranking_filtrado) > 0:
+        display = ranking_filtrado[cols_show].head(50).copy()
+        display["id_display"] = display["id_display"].astype(int)
+        display["prob_fraude"] = display["prob_fraude"].map("{:.1%}".format)
+        display["score_if"]    = display["score_if"].map("{:.4f}".format)
+        display["Amount"]      = display["Amount"].map("${:.2f}".format)
+        display["real"]        = display["real"].map({1: "✅ Fraude", 0: "❌ Falso positivo"})
+        display.columns        = ["ID", "Prob. Fraude", "Score IF", "Monto", "Etiqueta Real"]
+        display.index          = range(1, len(display) + 1)
 
-    st.dataframe(display, use_container_width=True)
+        st.dataframe(display, use_container_width=True)
+    else:
+        st.warning("⚠️ No hay transacciones que cumplan con los filtros seleccionados")
+
+    # Mostrar estadísticas de los filtros
+    st.markdown("---")
+    st.markdown("### 📈 Resumen de filtros")
+    col_stats1, col_stats2, col_stats3 = st.columns(3)
+    with col_stats1:
+        st.metric("Transacciones totales", len(ranking))
+    with col_stats2:
+        st.metric("Transacciones filtradas", len(ranking_filtrado))
+    with col_stats3:
+        pct_filtradas = (len(ranking_filtrado) / len(ranking) * 100) if len(ranking) > 0 else 0
+        st.metric("% retenidas", f"{pct_filtradas:.1f}%")
 
     st.markdown("""
     <div class="info-box">
@@ -551,18 +596,20 @@ with tab4:
     </div>
     """, unsafe_allow_html=True)
 
-    # 🔥 SECCIÓN DE FEEDBACK - solo aquí
     st.markdown("---")
     st.markdown("### ✏️ Marcar transacción como falso positivo")
 
     col_fb1, col_fb2 = st.columns(2)
     with col_fb1:
+        # Solo permitir IDs que existen en el ranking filtrado
+        max_id = len(ranking_filtrado) if len(ranking_filtrado) > 0 else 1
         idx_corregir = st.number_input(
             "ID de transacción a corregir", 
             min_value=1, 
-            max_value=len(ranking), 
+            max_value=max_id, 
             step=1,
-            key="feedback_id_input"
+            key="feedback_id_input",
+            help=f"Ingresa un ID entre 1 y {max_id}"
         )
     with col_fb2:
         nueva_etiqueta = st.selectbox(
@@ -572,18 +619,20 @@ with tab4:
         )
 
     if st.button("📝 Registrar corrección", key="feedback_button"):
-        # Guardar en session_state
-        if "feedback" not in st.session_state:
-            st.session_state.feedback = []
-        
-        # Obtener la fila correspondiente al ID
-        fila_corregir = ranking[ranking["id_display"] == idx_corregir]
-        if len(fila_corregir) > 0:
+        # Verificar que el ID existe en el ranking filtrado
+        if len(ranking_filtrado) > 0 and idx_corregir <= len(ranking_filtrado):
+            # Guardar en session_state
+            if "feedback" not in st.session_state:
+                st.session_state.feedback = []
+            
+            # Obtener la fila correspondiente al ID del ranking filtrado
+            fila_corregir = ranking_filtrado.iloc[idx_corregir - 1]
+            
             st.session_state.feedback.append({
-                "id_display": idx_corregir,
-                "idx_original": int(fila_corregir["idx_original"].iloc[0]),
+                "id_display": int(fila_corregir["id_display"]),
+                "idx_original": int(fila_corregir["idx_original"]),
                 "nueva_etiqueta": nueva_etiqueta,
-                "prob_fraude": float(fila_corregir["prob_fraude"].iloc[0]),
+                "prob_fraude": float(fila_corregir["prob_fraude"]),
                 "timestamp": pd.Timestamp.now().strftime("%Y-%m-%d %H:%M:%S")
             })
             st.success(f"✅ Corrección registrada para ID {idx_corregir}")
