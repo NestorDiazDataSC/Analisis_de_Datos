@@ -162,6 +162,7 @@ def generar_datos():
         st.stop()
 
     return pd.read_csv(csv_path)
+
 # ── Pipeline principal ────────────────────────────────────────────────────────
 @st.cache_resource
 def entrenar_modelos(df):
@@ -227,7 +228,11 @@ def entrenar_modelos(df):
     df_test["prob_fraude"] = y_prob_hyb
     df_test["pred"] = y_pred_hyb
     df_test["real"] = y_test.values
+    df_test["idx_original"] = df_test.index  # Guardar índice original para feedback
     ranking = df_test[df_test["pred"] == 1].sort_values("prob_fraude", ascending=False)
+    # Reset index for display but keep original index
+    ranking = ranking.reset_index(drop=True)
+    ranking["id_display"] = ranking.index + 1  # ID para mostrar
 
     return {
         "df": df,
@@ -252,15 +257,19 @@ st.markdown("""
 </div>
 """, unsafe_allow_html=True)
 
-# Botón entrenar
-if "resultados" not in st.session_state:
-    col_btn = st.columns([1, 2, 1])[1]
-    with col_btn:
-        if st.button("⚡ Ejecutar Pipeline Completo"):
-            with st.spinner("Cargando datos · Entrenando modelos · Calculando SHAP..."):
-                df = generar_datos()
-                st.session_state["resultados"] = entrenar_modelos(df)
+# Botón entrenar - CORREGIDO: ahora siempre visible y con mejor manejo de estado
+col_btn = st.columns([1, 2, 1])[1]
+with col_btn:
+    if st.button("⚡ Ejecutar Pipeline Completo", key="train_button"):
+        with st.spinner("Cargando datos · Entrenando modelos · Calculando SHAP..."):
+            df = generar_datos()
+            st.session_state["resultados"] = entrenar_modelos(df)
+            st.session_state["pipeline_ejecutado"] = True
+        st.rerun()  # Forzar recarga para mostrar resultados
 
+# Verificar si ya hay resultados o si se acaba de ejecutar
+if "resultados" not in st.session_state:
+    # Mostrar información inicial
     st.markdown("""
     <div class="info-box" style="max-width:600px; margin: 0 auto;">
     <strong>Dataset real · Credit Card Fraud (Kaggle)</strong><br>
@@ -268,7 +277,6 @@ if "resultados" not in st.session_state:
     El pipeline corre Isolation Forest → XGBoost base → XGBoost híbrido → SHAP.
     </div>
     """, unsafe_allow_html=True)
-
     st.stop()
 
 r = st.session_state["resultados"]
@@ -483,7 +491,7 @@ with tab3:
     """, unsafe_allow_html=True)
 
 # ════════════════════════════════════════════════════════════════════════════
-# TAB 4 — Ranking
+# TAB 4 — Ranking (con filtros y feedback)
 # ════════════════════════════════════════════════════════════════════════════
 with tab4:
     st.markdown('<div class="section-title">Transacciones clasificadas como fraude · ordenadas por probabilidad</div>', unsafe_allow_html=True)
@@ -503,15 +511,34 @@ with tab4:
 
     st.markdown("&nbsp;", unsafe_allow_html=True)
 
-    cols_show = ["prob_fraude", "score_if", "Amount", "real"]
-    cols_show = [c for c in cols_show if c in ranking.columns]
+    # 🔥 FILTROS - ahora funcionan correctamente
+    st.markdown("### 🔍 Filtros")
+    col_filtro1, col_filtro2, col_filtro3 = st.columns(3)
+    with col_filtro1:
+        min_prob = st.slider("Probabilidad mínima", 0.0, 1.0, 0.5, 0.01, key="min_prob_slider")
+    with col_filtro2:
+        max_monto = st.number_input("Monto máximo ($)", min_value=0, value=10000, step=100, key="max_monto_input")
+    with col_filtro3:
+        solo_fraudes = st.checkbox("Mostrar solo fraudes reales", value=False, key="solo_fraudes_checkbox")
+    
+    # Aplicar filtros al ranking
+    ranking_filtrado = ranking.copy()
+    ranking_filtrado = ranking_filtrado[ranking_filtrado["prob_fraude"] >= min_prob]
+    ranking_filtrado = ranking_filtrado[ranking_filtrado["Amount"] <= max_monto]
+    if solo_fraudes:
+        ranking_filtrado = ranking_filtrado[ranking_filtrado["real"] == 1]
 
-    display = ranking[cols_show].head(50).copy()
+    # Mostrar ranking filtrado
+    cols_show = ["id_display", "prob_fraude", "score_if", "Amount", "real"]
+    cols_show = [c for c in cols_show if c in ranking_filtrado.columns]
+
+    display = ranking_filtrado[cols_show].head(50).copy()
+    display["id_display"] = display["id_display"].astype(int)
     display["prob_fraude"] = display["prob_fraude"].map("{:.1%}".format)
     display["score_if"]    = display["score_if"].map("{:.4f}".format)
     display["Amount"]      = display["Amount"].map("${:.2f}".format)
     display["real"]        = display["real"].map({1: "✅ Fraude", 0: "❌ Falso positivo"})
-    display.columns        = ["Prob. Fraude", "Score IF", "Monto", "Etiqueta Real"]
+    display.columns        = ["ID", "Prob. Fraude", "Score IF", "Monto", "Etiqueta Real"]
     display.index          = range(1, len(display) + 1)
 
     st.dataframe(display, use_container_width=True)
@@ -524,44 +551,48 @@ with tab4:
     </div>
     """, unsafe_allow_html=True)
 
-    # 🔥 NUEVO: Filtros
-    col_filtro1, col_filtro2, col_filtro3 = st.columns(3)
-    with col_filtro1:
-        min_prob = st.slider("Probabilidad mínima", 0.0, 1.0, 0.5, 0.01)
-    with col_filtro2:
-        max_monto = st.number_input("Monto máximo ($)", min_value=0, value=10000, step=100)
-    with col_filtro3:
-        solo_fraudes = st.checkbox("Mostrar solo fraudes reales", value=False)
-    
-    # Aplicar filtros
-    ranking_filtrado = ranking.copy()
-    ranking_filtrado = ranking_filtrado[ranking_filtrado["prob_fraude"] >= min_prob]
-    ranking_filtrado = ranking_filtrado[ranking_filtrado["Amount"] <= max_monto]
-    if solo_fraudes:
-        ranking_filtrado = ranking_filtrado[ranking_filtrado["real"] == 1]
+    # 🔥 SECCIÓN DE FEEDBACK - solo aquí
+    st.markdown("---")
+    st.markdown("### ✏️ Marcar transacción como falso positivo")
 
-# Después de mostrar el dataframe
-st.markdown("### ✏️ Marcar transacción como falso positivo")
+    col_fb1, col_fb2 = st.columns(2)
+    with col_fb1:
+        idx_corregir = st.number_input(
+            "ID de transacción a corregir", 
+            min_value=1, 
+            max_value=len(ranking), 
+            step=1,
+            key="feedback_id_input"
+        )
+    with col_fb2:
+        nueva_etiqueta = st.selectbox(
+            "Etiqueta correcta", 
+            ["Fraude", "Normal (falso positivo)"],
+            key="feedback_label_select"
+        )
 
-col_fb1, col_fb2 = st.columns(2)
-with col_fb1:
-    idx_corregir = st.number_input("ID de transacción a corregir", 
-                                   min_value=1, 
-                                   max_value=len(ranking), 
-                                   step=1)
-with col_fb2:
-    nueva_etiqueta = st.selectbox("Etiqueta correcta", 
-                                  ["Fraude", "Normal (falso positivo)"])
+    if st.button("📝 Registrar corrección", key="feedback_button"):
+        # Guardar en session_state
+        if "feedback" not in st.session_state:
+            st.session_state.feedback = []
+        
+        # Obtener la fila correspondiente al ID
+        fila_corregir = ranking[ranking["id_display"] == idx_corregir]
+        if len(fila_corregir) > 0:
+            st.session_state.feedback.append({
+                "id_display": idx_corregir,
+                "idx_original": int(fila_corregir["idx_original"].iloc[0]),
+                "nueva_etiqueta": nueva_etiqueta,
+                "prob_fraude": float(fila_corregir["prob_fraude"].iloc[0]),
+                "timestamp": pd.Timestamp.now().strftime("%Y-%m-%d %H:%M:%S")
+            })
+            st.success(f"✅ Corrección registrada para ID {idx_corregir}")
+            st.info("💡 Estas correcciones se usarán en el próximo reentrenamiento")
+        else:
+            st.error(f"❌ No se encontró la transacción con ID {idx_corregir}")
 
-if st.button("📝 Registrar corrección"):
-    # Guardar en session_state
-    if "feedback" not in st.session_state:
-        st.session_state.feedback = []
-    
-    st.session_state.feedback.append({
-        "id": idx_corregir,
-        "nueva_etiqueta": nueva_etiqueta,
-        "timestamp": pd.Timestamp.now()
-    })
-    st.success(f"✅ Corrección registrada para ID {idx_corregir}")
-    st.info("💡 Estas correcciones se usarán en el próximo reentrenamiento")
+    # Mostrar feedback registrado
+    if "feedback" in st.session_state and len(st.session_state.feedback) > 0:
+        st.markdown("### 📋 Correcciones registradas")
+        feedback_df = pd.DataFrame(st.session_state.feedback)
+        st.dataframe(feedback_df, use_container_width=True, hide_index=True)
