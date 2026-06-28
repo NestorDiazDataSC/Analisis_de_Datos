@@ -275,10 +275,10 @@ r = st.session_state["resultados"]
 
 # ── Tabs ──────────────────────────────────────────────────────────────────────
 tab1, tab2, tab3, tab4 = st.tabs([
-    "📊 Métricas comparativas",
-    "🌲 Isolation Forest",
-    "📈 SHAP · Importancia de variables",
-    "🚨 Ranking de sospechosos"
+    "Métricas comparativas",
+    "Isolation Forest",
+    "SHAP · Importancia de variables",
+    "Ranking de sospechosos"
 ])
 
 # ════════════════════════════════════════════════════════════════════════════
@@ -348,7 +348,7 @@ with tab1:
         (axes[1], r["y_test"],  r["y_pred_hyb"],  "XGBoost + IF Score")
     ]:
         cm = confusion_matrix(y_t, y_p)
-        im = ax.imshow(cm, cmap="YlOrBr", aspect="auto")
+        im = ax.imshow(cm, cmap="gist_gray", aspect="auto")
         ax.set_facecolor("#161B22")
         for i in range(2):
             for j in range(2):
@@ -523,3 +523,45 @@ with tab4:
     de mayor riesgo. Con un recall ≥ 80%, el sistema alerta automáticamente 4 de cada 5 fraudes reales.
     </div>
     """, unsafe_allow_html=True)
+
+    # 🔥 NUEVO: Filtros
+    col_filtro1, col_filtro2, col_filtro3 = st.columns(3)
+    with col_filtro1:
+        min_prob = st.slider("Probabilidad mínima", 0.0, 1.0, 0.5, 0.01)
+    with col_filtro2:
+        max_monto = st.number_input("Monto máximo ($)", min_value=0, value=10000, step=100)
+    with col_filtro3:
+        solo_fraudes = st.checkbox("Mostrar solo fraudes reales", value=False)
+    
+    # Aplicar filtros
+    ranking_filtrado = ranking.copy()
+    ranking_filtrado = ranking_filtrado[ranking_filtrado["prob_fraude"] >= min_prob]
+    ranking_filtrado = ranking_filtrado[ranking_filtrado["Amount"] <= max_monto]
+    if solo_fraudes:
+        ranking_filtrado = ranking_filtrado[ranking_filtrado["real"] == 1]
+
+# Después de mostrar el dataframe
+st.markdown("### ✏️ Marcar transacción como falso positivo")
+
+col_fb1, col_fb2 = st.columns(2)
+with col_fb1:
+    idx_corregir = st.number_input("ID de transacción a corregir", 
+                                   min_value=1, 
+                                   max_value=len(ranking), 
+                                   step=1)
+with col_fb2:
+    nueva_etiqueta = st.selectbox("Etiqueta correcta", 
+                                  ["Fraude", "Normal (falso positivo)"])
+
+if st.button("📝 Registrar corrección"):
+    # Guardar en session_state
+    if "feedback" not in st.session_state:
+        st.session_state.feedback = []
+    
+    st.session_state.feedback.append({
+        "id": idx_corregir,
+        "nueva_etiqueta": nueva_etiqueta,
+        "timestamp": pd.Timestamp.now()
+    })
+    st.success(f"✅ Corrección registrada para ID {idx_corregir}")
+    st.info("💡 Estas correcciones se usarán en el próximo reentrenamiento")
