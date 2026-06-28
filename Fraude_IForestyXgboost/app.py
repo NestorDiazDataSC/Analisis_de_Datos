@@ -152,13 +152,16 @@ st.markdown("""
 # ── Carga de datos ────────────────────────────────────────────────────────────
 from pathlib import Path
 
-BASE_DIR = Path(__file__).resolve().parent
-csv_path = BASE_DIR / "creditcard_small.csv"
+@st.cache_data
+def generar_datos():
+    BASE_DIR = Path(__file__).resolve().parent
+    csv_path = BASE_DIR / "creditcard_small.csv"
 
-st.write(csv_path)
-st.write(csv_path.exists())
+    if not csv_path.exists():
+        st.error(f"No se encontró el archivo:\n{csv_path}")
+        st.stop()
 
-df = pd.read_csv(csv_path)
+    return pd.read_csv(csv_path)
 # ── Pipeline principal ────────────────────────────────────────────────────────
 @st.cache_resource
 def entrenar_modelos(df):
@@ -254,15 +257,18 @@ if "resultados" not in st.session_state:
     col_btn = st.columns([1, 2, 1])[1]
     with col_btn:
         if st.button("⚡ Ejecutar Pipeline Completo"):
-    with st.spinner("Cargando datos · Entrenando modelos · Calculando SHAP..."):
-        st.session_state["resultados"] = entrenar_modelos(df)
-        st.markdown(f"""
+            with st.spinner("Cargando datos · Entrenando modelos · Calculando SHAP..."):
+                df = generar_datos()
+                st.session_state["resultados"] = entrenar_modelos(df)
+
+    st.markdown("""
     <div class="info-box" style="max-width:600px; margin: 0 auto;">
     <strong>Dataset real · Credit Card Fraud (Kaggle)</strong><br>
     20.492 transacciones · 492 fraudes (2,40%) · 30 features (V1–V28 + Time + Amount)<br><br>
     El pipeline corre Isolation Forest → XGBoost base → XGBoost híbrido → SHAP.
     </div>
     """, unsafe_allow_html=True)
+
     st.stop()
 
 r = st.session_state["resultados"]
