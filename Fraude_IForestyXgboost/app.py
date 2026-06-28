@@ -353,7 +353,7 @@ with tab1:
         for i in range(2):
             for j in range(2):
                 ax.text(j, i, f"{cm[i,j]:,}", ha="center", va="center",
-                        color="white", fontsize=14, fontweight="bold")
+                        color="gray", fontsize=14, fontweight="bold")
         ax.set_xticks([0, 1]); ax.set_yticks([0, 1])
         ax.set_xticklabels(["Normal", "Fraude"], color="#8B949E")
         ax.set_yticklabels(["Normal", "Fraude"], color="#8B949E")
