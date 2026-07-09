@@ -1,6 +1,5 @@
----
-Comparación de algoritmos de regresión y mejora del ajuste predictivo en el análisis de precios de vehículos en Argentina
----
+## Predicción de precios de vehículos en Argentina: comparación de modelos de regresión
+
 Análisis aplicado a un conjunto de datos obtenidos de Kaggle, los cuales fueron recopilados mediante un web scraping realizado en un sitio Argentino de clasificados. El dataset incluye múltiples características de automóviles correspondientes a enero de 2023, como marca, modelo, año, kilometraje, tipo de motor, versión, y otras especificaciones técnicas y comerciales relevantes.
 
 
@@ -14,7 +13,7 @@ Ejemplo del analisis exploratorio de los datos:
 <img width="1005" height="435" alt="image" src="https://github.com/user-attachments/assets/64a87e9c-2b0e-44b5-8566-3d232dd2f83a" />
 
 
-A continuación los modelos de regresión utilizados:
+Los modelos de regresión que se usan en este notebook:
 
 Regresión Lineal
 
