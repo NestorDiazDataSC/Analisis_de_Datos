@@ -1,3 +1,4 @@
+## Analisis sobre riesgo crediticio
 
 En el negocio financiero, el crédito es un activo que genera ingresos, pero también riesgos. La gestión del riesgo crediticio busca cuantificar y mitigar las pérdidas derivadas del incumplimiento de los clientes, utilizando modelos estadísticos y métricas regulatorias.
 
