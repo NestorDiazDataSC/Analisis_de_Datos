@@ -1,3 +1,5 @@
+## Stress Testing
+
 El Stress Testing (o pruebas de estrés) en el sector bancario y financiero es un simulacro de catástrofes financieras. Consiste en evaluar qué tan resistente es un banco o una cartera de créditos ante escenarios económicos extremadamente adversos pero plausibles (como una recesión severa, una devaluación brusca, o un pico de inflación).  
 El proceso traduce variables macroeconómicas en impactos financieros directos mediante modelos estadísticos.  
 Las métricas clave que se buscan proyectar son:  
