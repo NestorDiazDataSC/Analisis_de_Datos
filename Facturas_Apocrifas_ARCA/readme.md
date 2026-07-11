@@ -1,3 +1,5 @@
+## Analisis EDA de patrones de facturación apocrifas en ARCA
+
 <img width="1206" height="660" alt="image" src="https://github.com/user-attachments/assets/5e9846b7-771e-4f50-8254-b7f377372c66" />
 
 Las herramientas de fiscalización vinculadas a facturas apócrifas y registros asociados (como la Base APOC o “Base de Contribuyentes No Confiables”) se remontan a normativas internas de AFIP de los años ’90 y 2000, como la Instrucción General 326/1997 y posteriores (IG 748/05 y otras que evolucionaron ese registro).
@@ -39,6 +41,7 @@ A partir de este identificador fiscal, se construye la base de análisis utiliza
 
 En el análisis se optó por enmascarar los números de CUIT y no publicar la base de datos, por razones de confidencialidad y protección de los datos.
 
+EDA:  
 <img width="1303" height="405" alt="image" src="https://github.com/user-attachments/assets/e54eb065-582e-4d69-a92d-69c18ba4dc9c" />
 
 <img width="1275" height="344" alt="image" src="https://github.com/user-attachments/assets/1f653a44-9375-4e1b-b82f-fbbc3c1d41cf" />
