@@ -1,8 +1,5 @@
----
+## Predicción de riesgo crediticio mediante regresión logística
 
-# Predicción de riesgo crediticio mediante regresión logística
-
----
 Estos datos contienen información sobre solicitudes de clientes, incluye sus atributos y que estatus lograron con su solicitud de credito. A continuación un resumen del analisis exploratorio de los datos y los algoritmos utilizados
 
 ![image](https://github.com/user-attachments/assets/267a32e2-d43c-456f-9ad0-ec943f907c43)
