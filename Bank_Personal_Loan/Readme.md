@@ -1,3 +1,5 @@
+## Predecir la probabilidad de aceptación de un prestamo personal
+
 Análisis de clasificación aplicado a un conjunto de datos del banco Thera Bank, cuyo objetivo es identificar estrategias para convertir clientes pasivos en solicitantes de préstamos personales, aumentar la retención y fortalecer la relación financiera con la entidad. El propósito del estudio es utilizar técnicas de análisis de datos y aprendizaje automático para comprender mejor el perfil de los clientes y predecir la probabilidad de aceptación de un préstamo personal, aportando información útil para la toma de decisiones comerciales.
 
 Resumen del analisis exploratorio de los datos:
