@@ -1,4 +1,4 @@
-## CONSTRUCCION DE UN MODELO DE FRAUDE
+## Construcción de un Modelo de detección de Fraude
 
 Construcción de un modelo predictivo para la detección de fraude a partir de un conjunto de datos de aproximadamente 250.000 registros. Se desarrollan etapas de ingeniería de características, reducción de dimensionalidad y entrenamiento de un modelo Random Forest
 
