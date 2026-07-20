@@ -1,3 +1,5 @@
+## Regresión Logistica como Benchmark y prueba de LightGBM
+
 El objetivo es construir un modelo que detecte transacciones fraudulentas, priorizando capturar la mayor cantidad posible (Recall) aunque eso signifique tener algunas falsas alarmas.
 
 Flujo de tu trabajo:
