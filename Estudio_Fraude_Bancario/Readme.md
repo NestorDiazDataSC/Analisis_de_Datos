@@ -1,3 +1,5 @@
+## Machine Learning aplicado a la detección de fraudes bancarios
+
 El fraude bancario se refiere a cualquier acción intencional destinada a obtener un beneficio económico indebido perjudicando a una entidad financiera o a sus clientes.
 El objetivo del análisis con Machine Learning es detectar patrones anómalos o sospechosos en los datos transaccionales o crediticios antes de que el fraude ocurra o se concrete.
 
