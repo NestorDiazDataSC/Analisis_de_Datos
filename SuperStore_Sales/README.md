@@ -11,7 +11,7 @@ Algoritmos y graficos utilizados en este analisis:
 
 * *Arboles de decisión*
 
-## Metadata: Como se componen los datos de este dataframe
+#### Metadata: Como se componen los datos de este dataframe
 Row ID => Unique ID for each row.
 
 Order ID => Unique Order ID for each Customer.
@@ -54,7 +54,7 @@ Discount => Discount provided.
 
 Profit => Profit/Loss incurred.
 
-## Utilizando Python para el analisis de los datos:
+#### Utilizando Python para el analisis de los datos:
 A traves de este analisis se obtuvieron los siguientes graficos en Python usando sus librerias para graficas, en el archivo ".ipynb" se puede ver el codigo utilizado para analizar estos datos y mas graficos.
 
 Heatmap
@@ -65,7 +65,7 @@ Correlaciones
 
 ![02](https://user-images.githubusercontent.com/94582879/173687153-435f4b86-ba6c-4ed5-ab86-5f5550b4dde3.jpg)
 
-## Dashboard POWER BI
+#### Dashboard POWER BI
 Utilizando Power BI para analizar la misma base de datos, agregando formulas con DAX para poder presentar un Dashboard que empieza viendose asi y luego aplicando configuraciones del programa va evolucionando hasta la presentación final que se vera en la ultima imagen.
 Esta seria la evolución del Dashboard.
 ![01](https://user-images.githubusercontent.com/94582879/174399022-288aeb55-40ef-490f-83b2-c8b2f0e4525a.jpg)
