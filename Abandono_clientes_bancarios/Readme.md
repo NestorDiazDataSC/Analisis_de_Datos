@@ -15,7 +15,7 @@ Analisis exploratorio de los datos:
 <img width="1050" height="324" alt="image" src="https://github.com/user-attachments/assets/84ff433c-9350-443a-9ed5-1fea704a72d5" />
 
 Conclusiones despues de analizar los algoritmos
-<img width="1289" height="518" alt="image" src="https://github.com/user-attachments/assets/30e90ab0-1da6-410f-b3c8-b7f5cc551193" />
+<img width="1051" height="424" alt="image" src="https://github.com/user-attachments/assets/2f8890fc-c07b-418b-8ab8-fcf750f07512" />
 
 ## Créditos y autor
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Nestor_Diaz-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=101010)](https://www.linkedin.com/in/contadornestordiaz/)
