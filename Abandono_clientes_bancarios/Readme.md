@@ -12,9 +12,9 @@ Analisis exploratorio de los datos:
 
 <img width="1081" height="326" alt="image" src="https://github.com/user-attachments/assets/4b5027b3-bb1e-458a-8e14-4ea185df9834" />
 
-<img width="1050" height="324" alt="image" src="https://github.com/user-attachments/assets/84ff433c-9350-443a-9ed5-1fea704a72d5" />
+<img width="1050" height="324" alt="image" src="https://github.com/user-attachments/assets/84ff433c-9350-443a-9ed5-1fea704a72d5" />  
 
-Conclusiones despues de analizar los algoritmos
+Conclusiones despues de analizar los algoritmos: Para un problema de reducción de abandono de clientes, normalmente el objetivo principal es identificar a los clientes que van a abandonar el servicio (clase positiva, 1). Esto significa que el recall para la clase positiva suele ser más crítico que la precisión, porque perder un cliente (falso negativo) tiene mayor costo que predecir un abandono que no ocurre (falso positivo). Para un proyecto de predicción de churn elegiría: XGBoost ya que gana por muy poco a esta red neuronal. Detecta muchos más clientes en riesgo (Recall = 0.77), mantiene una buena precisión (Precision = 0.74) y tiene un rendimiento general equilibrado.  
 <img width="1051" height="424" alt="image" src="https://github.com/user-attachments/assets/2f8890fc-c07b-418b-8ab8-fcf750f07512" />
 
 ## Créditos y autor
