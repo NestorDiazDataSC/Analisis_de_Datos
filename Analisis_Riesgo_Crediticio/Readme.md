@@ -15,9 +15,10 @@ EDA
 
 <img width="1284" height="469" alt="image" src="https://github.com/user-attachments/assets/b58f9249-da4c-4cc0-9859-d172330b5452" />
 
-Distribucion de la perdida esperada (Expected Loss)
+Distribucion de la perdida esperada (Expected Loss)  
+Es una métrica central en riesgo crediticio, estima la pérdida promedio esperada por incumplimiento de los clientes.  
 <img width="1287" height="340" alt="image" src="https://github.com/user-attachments/assets/e4560377-7efe-4798-95b8-999645ffe453" />
-
+Los montos bajos corresponden a clientes con una exposición monetaria reducida, por lo que representan un menor riesgo de pérdida. En cambio, los montos más elevados suelen estar asociados a clientes con una mayor exposición y, por ende, con una mayor probabilidad de incumplimiento (default). Por ello, cuando las barras de mayor altura se concentran hacia la izquierda del gráfico, significa que la mayor parte de los clientes presenta pérdidas esperadas bajas. Las barras ubicadas hacia la derecha representan a un grupo más reducido de clientes, pero con pérdidas esperadas considerablemente mayores.
 
 ## Créditos y autor
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Nestor_Diaz-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=101010)](https://www.linkedin.com/in/contadornestordiaz/)
