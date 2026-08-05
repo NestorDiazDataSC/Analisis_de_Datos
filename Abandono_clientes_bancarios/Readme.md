@@ -1,9 +1,8 @@
 
 ## Machine Learning aplicado a la retención de clientes bancarios: Predicción de abandono
 
-Que es el abandono de clientes (Churn). Es la tasa de clientes que dejan de usar un servicio o producto durante un período de tiempo determinado.
-
-Fórmula básica: (Clientes perdidos en un período / Total de clientes al inicio del período) × 100.
+> El modelo XGBoost obtuvo el mejor Recall.Que es el abandono de clientes (Churn). Es la tasa de clientes que dejan de usar un servicio o producto durante un período de tiempo determinado.  
+> Fórmula básica: (Clientes perdidos en un período / Total de clientes al inicio del período) × 100.
 Ejemplo: si empiezo el mes con 1.000 clientes y pierdo 50, el churn mensual es del 5%.
 
 ## Tipos de Churn
