@@ -20,7 +20,7 @@ puesto que se obtienen mejores resultados que los demas algoritmos como se puede
 
 <img width="1339" height="638" alt="image" src="https://github.com/user-attachments/assets/1fbdf03e-2813-4df6-8c22-71cc709e426e" />
 
-Entre los modelos evaluados —Árboles de decisión, Random Forest, K-Nearest Neighbors y Naive Bayes, El de Random Forest se destacó por ofrecer la mejor precisión y un bajo ratio de errores, por lo que se recomienda utilizar este algoritmo para futuras predicciones, asegurando resultados confiables y consistentes para este conjunto de datos.
+Entre los modelos evaluados (Arboles de decisión, Random Forest, K-Nearest Neighbors y Naive Bayes). El de Random Forest se destacó por ofrecer la mejor precisión y un bajo ratio de errores, por lo que se recomienda utilizar este algoritmo para futuras predicciones, asegurando resultados confiables y consistentes para este conjunto de datos.
 Recomendaciones para la entidad bancaria: Centrar los esfuerzos de análisis en determinar con precisión el nivel de ingresos de los clientes, ya que es el factor más determinante para la aceptación de préstamos. Considerar también el nivel de educación como segundo factor relevante.
 
 ## Créditos y autor
