@@ -98,6 +98,10 @@ Matriz de correlación (mas correlacionadas)
 Metricas de los modelos de ML estudiados
 <img width="1376" height="624" alt="image" src="https://github.com/user-attachments/assets/94befa8b-9e1d-4653-beae-e5ecfe5e38d9" />
 
+Resultados obtenidos:
+<img width="947" height="405" alt="image" src="https://github.com/user-attachments/assets/34554b8d-e50e-474b-a314-85bf46c3595d" />
+
+
 ## Créditos y autor
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Nestor_Diaz-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=101010)](https://www.linkedin.com/in/contadornestordiaz/)
 
