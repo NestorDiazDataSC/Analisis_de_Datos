@@ -13,6 +13,8 @@ Luego procedi a limpiar un poco mas los datos y de forma arbitraria opte por fil
 
 ![02](https://user-images.githubusercontent.com/94582879/166084387-14a3e6de-225f-4008-bdb2-656dc79933a6.jpg)
 
+Ejemplo Arbol de decisión:
+<img width="393" height="232" alt="image" src="https://github.com/user-attachments/assets/e8b3db7d-6a2b-4e03-af50-73e779c0787e" />
 
 
 #### Créditos y autor
