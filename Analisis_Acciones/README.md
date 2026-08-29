@@ -1,6 +1,6 @@
 ## Analisis del mercado de valores de Argentina
 
-A travez de un dataset publico obtenido de Kaggle con información bursatil de Argentina, se hace un estudio para practicar los conocimientos adquiridos en Python. El estudio busca resolver "Que variable es la que mas afecta al precio de las acciones? y de acuerdo a la información, como podemos predecir que seran los precios en un futuro?"
+A travez de un dataset publico obtenido de Kaggle con información bursatil de Argentina. El estudio busca resolver "Que variable es la que mas afecta al precio de las acciones? y de acuerdo a la información, como podemos predecir que seran los precios en un futuro?"
 
 Algunos ejemplos del EDA:  
 ![image](https://github.com/user-attachments/assets/ca83424f-bac3-4bf8-a263-fbe69edba303)
