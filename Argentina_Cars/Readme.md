@@ -2,6 +2,18 @@
 
 Análisis aplicado a un conjunto de datos obtenidos de Kaggle, los cuales fueron recopilados mediante un web scraping realizado en un sitio Argentino de clasificados. El dataset incluye múltiples características de automóviles correspondientes a enero de 2023, como marca, modelo, año, kilometraje, tipo de motor, versión, y otras especificaciones técnicas y comerciales relevantes.
 
+>money: the number of prices  
+brand: the brand of the car  
+model: the model of the car  
+year: the year of the car  
+color: the color of the car  
+fuel_type: the fuel type of the car  
+door: the door of the car  
+gear: the gear type of the car  
+motor: the motor type of the car  
+body_type: the body type of the car  
+kilometers: the kilometer of the car  
+currency: the currency of the price of car  
 
 Ejemplo del analisis exploratorio de los datos:
 <img width="1008" height="423" alt="image" src="https://github.com/user-attachments/assets/0e93381b-9d6e-4ec9-97a4-e7aa99fdda68" />
@@ -12,6 +24,9 @@ Ejemplo del analisis exploratorio de los datos:
 
 <img width="1005" height="435" alt="image" src="https://github.com/user-attachments/assets/64a87e9c-2b0e-44b5-8566-3d232dd2f83a" />
 
+Relación Precio/Kilometros  
+<img width="491" height="354" alt="image" src="https://github.com/user-attachments/assets/5d0207eb-e999-4573-8af1-37a6c021f63a" />
+
 
 Los modelos de regresión que se usan en este notebook:
 
@@ -21,7 +36,10 @@ Regresión Lineal
 
 Regresión Polinomica
 
-<img width="640" height="387" alt="image" src="https://github.com/user-attachments/assets/5fef0a82-f558-4243-b07d-9b872aa93d8d" />
+<img width="640" height="387" alt="image" src="https://github.com/user-attachments/assets/5fef0a82-f558-4243-b07d-9b872aa93d8d" />  
+
+La curva intenta ajustarse a la tendencia de los datos, capturando posibles relaciones no lineales.
+Por ejemplo, si los autos con pocos kilómetros tienen precios muy altos y luego bajan más rápido a medida que aumentan los kilómetros, la curva reflejará esa forma.
 
 Gradient Boosting
 
