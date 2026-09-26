@@ -22,5 +22,13 @@ Comparación de los modelos analizados:
 
 <img width="1309" height="503" alt="image" src="https://github.com/user-attachments/assets/c057ad64-36a0-43bb-aadf-3481289f4a44" />
 
+La curva ROC es independiente del umbral, evalúa el modelo en todos los umbrales posibles. El AUC resume en un número qué tan bien separa el modelo las clases. Un AUC de 0.82 es bueno.
+
+0.50 → el modelo no distingue clases (azar).
+0.60–0.70 → débil.
+0.70–0.80 → aceptable.
+0.80–0.90 → bueno.
+0.90+ → excelente aunque puede haber overfitting o leakage.
+
 ## Créditos y autor
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Nestor_Diaz-0077B5?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=101010)](https://www.linkedin.com/in/contadornestordiaz/)
